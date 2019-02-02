@@ -90,7 +90,7 @@ class App extends Component {
         this.setState({
             ...this.state,
             tasks,
-            currentTask: {name: ''}
+            currentTask: {name: '', done: false}
         });
     };
 
