@@ -1,24 +1,23 @@
-import React, {Component} from 'react';
+import React from 'react';
 
+function AddTaskForm(props) {
 
-class AddTaskForm extends Component {
-    render() {
-        return (
-            <div className={"addtaskform"}>
-                <div className={'d-inline'}>
-                    <input
-                        type="text"
-                        value={this.props.name}
-                    />
-                </div>
-                <div className={'d-inline'}>
-                    <button onClick={this.props.onAddTask}>
-                        Add
-                    </button>
-                </div>
+    return (
+        <div className={"addtaskform"}>
+            <form className={'d-inline'}>
+                <input
+                    type="text"
+                    value={props.task.name}
+                    onChange={props.onChangeInput}
+                />
+            </form>
+            <div className={'d-inline'}>
+                <button onClick={props.onAddTask}>
+                    Add
+                </button>
             </div>
-        )
-    }
+        </div>
+    )
 }
 
 

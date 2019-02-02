@@ -1,24 +1,31 @@
-import React, {Component} from 'react';
+import React from 'react';
 
 
-class Task extends Component {
-    render() {
-        return (
-            <div className={"task"}>
-                <div className={''}>
+function Task(props) {
+    return (
+        <div className={"task row mt-3 border border-primary rounded w-50 ml-auto mr-auto p-2"}>
+            <div className={'col'}>
+                <label htmlFor="checkbox" className={'mr-2'}>Готово</label>
+                <input
+                    type="checkbox"
+                    checked={props.done}
+                    onChange={props.onChangeTask}
+                    id='checkbox'
+                />
+            </div>
+            <div className={'col'}>
+                {props.name}
+            </div>
+            <div className={'row col'}>
 
-                        {this.props.name}
-
-                </div>
-                <div className={''}>
-                    <button onClick={this.props.onRemoveTask}>
-                        Удалить
-                        {/*<i className="far fa-trash-alt"></i>*/}
+                <div className={'col'}>
+                    <button onClick={props.onDeleteTask}>
+                        <i className="far fa-trash-alt"></i>
                     </button>
                 </div>
             </div>
-        )
-    }
+        </div>
+    )
 }
 
 
