@@ -8,8 +8,7 @@ class AddTaskForm extends Component {
                 <div className={'d-inline'}>
                     <input
                         type="text"
-                        value={this.props.task}
-                        onChange={this.props.onChangeTask}
+                        value={this.props.name}
                     />
                 </div>
                 <div className={'d-inline'}>

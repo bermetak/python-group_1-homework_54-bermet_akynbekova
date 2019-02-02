@@ -5,14 +5,15 @@ class Task extends Component {
     render() {
         return (
             <div className={"task"}>
-                <div className={'d-inline'}>
-                    <p>
-                        {this.props.task}
-                    </p>
+                <div className={''}>
+
+                        {this.props.name}
+
                 </div>
-                <div className={'d-inline'}>
+                <div className={''}>
                     <button onClick={this.props.onRemoveTask}>
-                        <i className="far fa-trash-alt"></i>
+                        Удалить
+                        {/*<i className="far fa-trash-alt"></i>*/}
                     </button>
                 </div>
             </div>
