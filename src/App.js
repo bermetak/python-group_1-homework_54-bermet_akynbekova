@@ -37,7 +37,7 @@ class App extends Component {
                     <Task
                         name={task.name}
                         done={task.done}
-                        onChangeTask={(event) => this.doneTask(task.id, event)}
+                        onChangeTask={() => this.doneTask(task.id)}
                         onDeleteTask={(event) => this.deleteTask(task.id, event)}>
                     </Task>
                 </div>
@@ -46,19 +46,17 @@ class App extends Component {
     };
 
 
-    doneTask = (id, event) => {
-        event.preventDefault();
+    doneTask = (id) => {
         let taskId = this.state.tasks.findIndex(task => {
             return task.id === id;
         });
         let name = this.state.tasks[taskId].name;
         let done = this.state.tasks[taskId].done;
         let newTask = {
-            id: taskId,
+            id: id,
             name: name,
             done: !done
         };
-
         const tasks = [...this.state.tasks];
         tasks.splice(taskId, 1, newTask);
 
